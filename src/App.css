@@ -1,0 +1,38 @@
+.flex-row {
+  display: flex;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.background {
+  height: 400px;
+  background-color: black;
+  font-size: 40px;
+}
+
+.height {
+  height: 400px;
+}
+
+.hero {
+  height: 250px;
+  min-width: 600px;
+  background-color: #00e5ff;
+}
+
+.width {
+  max-width: 800px;
+}
+
+.search {
+background-color: #fbfbfc;
+min-width: 600px;
+height: 150px;
+}

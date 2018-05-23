@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -30,20 +31,33 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <div className="row">
-            <div className="col-4">
-              <div className="content-block" style={{width: "400px"}}>
-              <div className="card" style={{ backgroundColor: "#00e5ff" }}>
-                <h1 className="colfax" style={{ color: "white" }}>
-                  SendGrid Web Developer Challenge
-                </h1>
-              </div>
-              </div>
+          <div className="row flex-row">
+          <div className="row flex-column">
+            <div className="colfax hero flex-column">
+              <h1 style={{color: "white"}}>SendGrid Web <div>Developer</div> <div>Challenge</div></h1>
+            </div>
+            <div className="search flex-column">
+            <h2 style={{color: "#808080"}}>Find an Article</h2>
+            <div className="input-text-wrap is-search">
+              <label
+                className="input-text-label"
+                htmlFor="input-text-example-search"
+              >
+              </label>
+              <input
+                type="text"
+                id="input-text-example-search"
+                value={this.state.search}
+                onChange={this.handleSearchInput}
+                placeholder="Search"
+              />
+            </div>
+            </div>
             </div>
 
-            <div className="col-8">
-              <div className="content-block" style={{width: "400px"}}>
-                <div className="card is-centered">
+            <div className="col-8 width">
+              <div className="content-block">
+                <div className="card is-centered height">
                   <span className="badge mantis">Featured</span>
                   <h2>
                     Our People, Our Story: Diversity and Inclusion at SendGrid
@@ -61,37 +75,6 @@ class App extends Component {
             </div>
           </div>
 
-          <div className="row">
-            <div className="col-4 col-offset-3">
-              <div className="input-text-wrap is-search">
-                <label
-                  className="input-text-label"
-                  htmlFor="input-text-example-search"
-                >
-                  Find an Article
-                </label>
-                <input
-                  type="text"
-                  id="input-text-example-search"
-                  value={this.state.search}
-                  onChange={this.handleSearchInput}
-                />
-                <div className="input-search-results">
-                  <p className="search-results-title">
-                    Search for "whitelabel"
-                  </p>
-                  <span className="loading" />
-                  <ul className="search-results">
-                    <li className="search-result">Whitelabels are cool</li>
-                    <li className="search-result">
-                      Really, really long title about whitelabels
-                    </li>
-                    <li className="search-result">Whitelabels are nifty</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
           {this.state.posts.map(post => (
             <div key={post.id} className="row">
               <div className="col-6 offset-3">
